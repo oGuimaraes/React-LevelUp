@@ -5,9 +5,25 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-color: #c3f8ff;
 }
 
+
+h2 {
+    color: #00b9d1;
+}
+h1 {
+    font-size: 16px;
+}
+.content-task{
+    text-align: left;
+}
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
+}
+
+.App {
+    display: flex;
+    padding: 0 20px 10px;
 }
