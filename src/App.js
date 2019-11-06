@@ -11,7 +11,7 @@ class App extends Component {
             {
                 id: 1,
                 title: 'Estudar para a prova de Redes',
-                completed: false
+                completed: true
             },
             {
                 id: 2,
@@ -31,10 +31,26 @@ class App extends Component {
         ]
     }
   } 
+
+    markCompleted = (id) => {
+        this.setState({
+            tarefas: this.state.tarefas.map(task => {
+                if (task.id === id) {
+                    task.completed = !task.completed
+                }
+                console.log(task)
+                return task;
+            })
+        })
+    
+}
+
+
+    
     render() {
         return (
             <div className="App">
-                <Tasks tarefas={this.state.tarefas} />
+                <Tasks tarefas={this.state.tarefas} markCompleted={this.markCompleted} />
             </div>
         );
     }
