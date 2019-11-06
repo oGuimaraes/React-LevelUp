@@ -1,13 +1,14 @@
 import React, { Component } from 'react'
+import TaskItem from './TaskItem'
 
 export class Tasks extends Component {
     
     render() {
-        console.log(this.props)
+        console.log(this.props.tarefas)
         const taskList = this.props.tarefas.map(arrayItem => (
             <div key={arrayItem.id}>
                 <input type="checkbox"></input>
-                <span>{arrayItem.id }. { arrayItem.title }</span>
+                <span>{arrayItem.title}</span>
                 <br/>
             </div>
         )        
@@ -15,7 +16,7 @@ export class Tasks extends Component {
         return (
             <div>
                 <h2>Minhas Tarefas</h2>
-                <div className="content-task">{taskList}</div>
+                <TaskItem className="Teste" tarefas={taskList}/>
             </div>
         )
     }

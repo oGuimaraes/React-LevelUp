@@ -30,12 +30,11 @@ class App extends Component {
             }
         ]
     }
-  }
+  } 
     render() {
-
         return (
             <div className="App">
-                <Tasks key="1" tarefas={this.state.tarefas} />
+                <Tasks tarefas={this.state.tarefas} />
             </div>
         );
     }
