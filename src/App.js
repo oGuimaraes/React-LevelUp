@@ -1,6 +1,8 @@
 import React, {Component} from 'react';
 import './App.css';
 import Tasks from './components/Tasks';
+import AddTask from './components/AddTask';
+import uuid from 'uuid'
 
 class App extends Component {
 
@@ -30,6 +32,7 @@ class App extends Component {
             }
         ]
     }
+    this.counter = this.state.tarefas.length
   } 
 
     markCompleted = (id) => {
@@ -51,11 +54,29 @@ class App extends Component {
         })
     }
 
+    addTask = title => {
+        const { tarefas } = this.state;
+
+        this.setState({
+            tarefas: [
+                ...tarefas,
+                {
+                    id: ++this.counter,
+                    title,
+                    completed: false
+                }
+            ]
+        })
+    }
+
     render() {
         return (
             <div className="App">
                 <div className="Container">
-                    <Tasks tarefas={this.state.tarefas}                                                 markCompleted={this.markCompleted}
+                    <h2>Minhas Tarefas</h2>
+                    <AddTask addTask={this.addTask}/>
+                    <Tasks tarefas={this.state.tarefas}
+                    markCompleted={this.markCompleted}
                     removeTask={this.removeTask} />
                 </div>
             </div>

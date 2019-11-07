@@ -1,6 +1,5 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
-import { thisExpression } from '@babel/types'
 
 export class TaskItem extends Component {
     setStyle = () => {

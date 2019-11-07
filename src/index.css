@@ -49,3 +49,10 @@ code {
     align-items: center;
     border-bottom:1px darkgray solid;
 }
+
+.input {
+    border-radius: 5px;
+    margin: 10px;
+    height: 18px;
+    padding: 5px;
+}
