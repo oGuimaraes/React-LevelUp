@@ -45,7 +45,10 @@ class App extends Component {
     }
 
     removeTask = (id) => {
-        return console.log(id)
+        const { tarefas } = this.state;
+        this.setState({
+            tarefas: tarefas.filter(task => task.id !== id)
+        })
     }
 
     render() {
