@@ -2,13 +2,15 @@ import React, { Component } from 'react'
 import TaskItem from './TaskItem'
 
 export class Tasks extends Component {
-     markCompleted = () => {
-        console.log('Tô no Tasks')
+
+    removeTask = () => {
+        console.log("Teste")
     }
+
 
   render() {
     const taskItems = this.props.tarefas.map(task => (
-      <TaskItem key={task.id} tarefa={task} markCompleted={this.props.markCompleted}/>
+      <TaskItem key={task.id} tarefa={task} removeTask={this.props.removeTask}              markCompleted={this.props.markCompleted}/>
     ))
 
     return (

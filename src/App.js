@@ -42,15 +42,19 @@ class App extends Component {
                 return task;
             })
         })
-    
-}
+    }
 
+    removeTask = (id) => {
+        return console.log(id)
+    }
 
-    
     render() {
         return (
             <div className="App">
-                <Tasks tarefas={this.state.tarefas} markCompleted={this.markCompleted} />
+                <div className="Container">
+                    <Tasks tarefas={this.state.tarefas}                                                 markCompleted={this.markCompleted}
+                    removeTask={this.removeTask} />
+                </div>
             </div>
         );
     }
