@@ -1,22 +1,76 @@
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  
+  font-size: 12px;
+}
+
+
+h2 {
+    color: #00b9d1;
+}
+h1 {
+    font-size: 16px;
+}
+.content-task{
+    text-align: left;
+}
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+    monospace;
+}
+
 .App {
-  text-align: center;
+    display: flex;
+    margin: 10px;
+    flex-direction: column;
+    width: 350px;
+    text-align: left;
+    justify-content: space-between;
 }
 
-.App-logo {
-  height: 15vmin;
+.Container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background-color: rgb(247, 247, 247);
+    border-radius: 5px;
+    box-shadow: 0 3px 6px rgba(0,0,0,.16);
+    min-height: 300px;
+    padding: 10px 20px 10px;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(22px + 2vmin);
-  color: silver;
+.line {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom:1px darkgray solid;
 }
 
-.App-link {
-  color: white;
+.input {
+    border-radius: 5px;
+    margin: 15px 10px 10px 10px;
+    height: 18px;
+    padding: 5px;
+    width: 200px;
+}
+
+.nav-bar {
+    border-bottom: 1px rgb(206, 206, 206) solid;
+    padding-bottom: 10px;
+}
+
+.nav-bar a {
+    text-decoration: none;
+    background-color: #00b9d1;
+    padding: 5px;
+    border-radius: 5px;
+    margin: 5px;
+    color: white;
+    font-weight: 700;
+    font-size: 12px;
 }

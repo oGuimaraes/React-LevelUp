@@ -2,7 +2,11 @@ import React, {Component} from 'react';
 import './App.css';
 import Tasks from './components/Tasks';
 import AddTask from './components/AddTask';
+import Header from './components/Header'
+import About from './components/Pages/About'
 import uuid from 'uuid'
+import {BrowserRouter} from 'react-router-dom'
+import {BrowserRouter as Router, Switch, Route} from 'react-router-dom'
 
 class App extends Component {
 
@@ -32,7 +36,7 @@ class App extends Component {
             }
         ]
     }
-    this.counter = this.state.tarefas.length
+    //this.counter = this.state.tarefas.length
   } 
 
     markCompleted = (id) => {
@@ -61,7 +65,8 @@ class App extends Component {
             tarefas: [
                 ...tarefas,
                 {
-                    id: ++this.counter,
+                    id: uuid.v4(),
+                    //id: ++this.counter,
                     title,
                     completed: false
                 }
@@ -71,15 +76,23 @@ class App extends Component {
 
     render() {
         return (
-            <div className="App">
-                <div className="Container">
-                    <h2>Minhas Tarefas</h2>
-                    <AddTask addTask={this.addTask}/>
-                    <Tasks tarefas={this.state.tarefas}
-                    markCompleted={this.markCompleted}
-                    removeTask={this.removeTask} />
+            <BrowserRouter>
+                <div className="App">
+                    <div className="Container">
+                        <Header></Header>
+
+                        <Route exact path='/' render={(props) => (
+                            <React.Fragment>
+                                <AddTask addTask={this.addTask}/>
+                                <Tasks  tarefas={this.state.tarefas}
+                                        markCompleted={this.markCompleted}
+                                        removeTask={this.removeTask} />
+                            </React.Fragment>
+                        )}/>
+                        <Route exact path='/about-me' component={About}/>
+                    </div>
                 </div>
-            </div>
+            </BrowserRouter>
         );
     }
 }

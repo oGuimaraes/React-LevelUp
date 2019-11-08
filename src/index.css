@@ -6,11 +6,13 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   background-color: #c3f8ff;
+  font-size: 12px;
 }
 
 
 h2 {
     color: #00b9d1;
+    font-size: 24px;
 }
 h1 {
     font-size: 16px;
@@ -24,13 +26,7 @@ code {
 }
 
 .App {
-    display: flex;
-    margin: 10px;
-    padding: 10px 20px 10px;
-    flex-direction: column;
-    width: 350px;
-    text-align: left;
-    justify-content: space-between;
+    background-color: red;
 }
 
 .Container {
@@ -39,20 +35,54 @@ code {
     justify-content: space-between;
     background-color: rgb(247, 247, 247);
     border-radius: 5px;
-    box-shadow: 0 3px 6px rgba(0,0,0,.16);
+    box-shadow: 0 1px 6px 0px rgba(0,0,0,.16);
+    min-height: 300px;
+    padding: 10px 20px 10px;
+    text-align: center;
 }
 
 .line {
     display: flex;
     justify-content: space-between;
-    padding: 5px 10px;
     align-items: center;
     border-bottom:1px darkgray solid;
 }
 
+.header {
+    text-align: center;
+}
+
 .input {
     border-radius: 5px;
-    margin: 10px;
+    margin: 15px 10px 10px 10px;
     height: 18px;
     padding: 5px;
+    width: 200px;
+    border: 1px silver solid;
+    box-shadow: 0 3px 6px rgba(0,0,0,.16);
+    font-size: 12px;
+}
+
+.nav-bar {
+    border-bottom: 1px rgb(206, 206, 206) solid;
+    padding-bottom: 10px;
+}
+
+.nav-bar a {
+    box-shadow: 0 3px 6px rgba(0,0,0,.16);
+    text-decoration: none;
+    background-color: #00b9d1;
+    padding: 5px;
+    border-radius: 5px;
+    margin: 5px;
+    color: white;
+    font-weight: 700;
+    font-size: 12px;
+}
+
+.text-content{
+    display: flex;
+    flex-direction: column;
+
+    text-align: center;
 }
