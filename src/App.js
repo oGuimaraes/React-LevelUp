@@ -14,7 +14,7 @@ class App extends Component {
         super(props);
         this.state = {
         tarefas: [
-            {
+/*             {
                 id: 1,
                 title: 'Estudar para a prova de Redes',
                 completed: true
@@ -33,7 +33,7 @@ class App extends Component {
                 id: 4,
                 title: 'Passear com o dog',
                 completed: false
-            }
+            } */
         ]
     }
     //this.counter = this.state.tarefas.length
