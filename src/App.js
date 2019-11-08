@@ -7,6 +7,7 @@ import About from './components/Pages/About'
 import uuid from 'uuid'
 import {BrowserRouter} from 'react-router-dom'
 import {BrowserRouter as Router, Switch, Route} from 'react-router-dom'
+import axios from 'axios'
 
 class App extends Component {
 
@@ -39,6 +40,7 @@ class App extends Component {
     //this.counter = this.state.tarefas.length
   } 
 
+
     markCompleted = (id) => {
         this.setState({
             tarefas: this.state.tarefas.map(task => {
@@ -51,28 +53,60 @@ class App extends Component {
         })
     }
 
+    // removeTask = (id) => {
+    //     const { tarefas } = this.state;
+    //     this.setState({
+    //         tarefas: tarefas.filter(task => task.id !== id)
+    //     })
+    // }
+
+
     removeTask = (id) => {
         const { tarefas } = this.state;
-        this.setState({
+
+		axios
+		.delete(`https://jsonplaceholder.typicode.com/todos/${id}`).then(response => this.setState({
             tarefas: tarefas.filter(task => task.id !== id)
-        })
+        }))
     }
+
+	
+
+    // addTask = title => {
+    //     const { tarefas } = this.state;
+
+    //     this.setState({
+    //         tarefas: [
+    //             ...tarefas,
+    //             {
+    //                 id: uuid.v4(),
+    //                 //id: ++this.counter,
+    //                 title,
+    //                 completed: false
+    //             }
+    //         ]
+    //     })
+    // }
 
     addTask = title => {
-        const { tarefas } = this.state;
+		const { tarefas } = this.state;
 
-        this.setState({
-            tarefas: [
-                ...tarefas,
-                {
-                    id: uuid.v4(),
-                    //id: ++this.counter,
-                    title,
-                    completed: false
-                }
-            ]
-        })
+		axios.post('https://jsonplaceholder.typicode.com/todos', {
+			title: title,
+			completed: false
+		})
+		.then(response => 
+			this.setState({ tarefas: [...tarefas, response.data]})
+		)
     }
+
+	componentDidMount(){
+		axios.get('https://jsonplaceholder.typicode.com/todos?_limit=10')
+		.then( response => {
+			this.setState({tarefas: response.data})
+		})
+	
+	}
 
     render() {
         return (
